@@ -30,12 +30,22 @@ AFRAME.registerComponent('cubemap', {
     var srcPath = data.folder;
 
     // Cubemap image files must follow this naming scheme
-    // from: http://threejs.org/docs/index.html#Reference/Textures/CubeTexture
+    // originally from: http://threejs.org/docs/index.html#Reference/Textures/CubeTexture
+    // see mapping below
+    
     var urls = [
-      'posx.jpg', 'negx.jpg',
-      'posy.jpg', 'negy.jpg',
-      'posz.jpg', 'negz.jpg'
+      'left.jpg', 'right.jpg',
+      'up.jpg', 'down.jpg',
+      'front.jpg', 'back.jpg'
     ];
+
+    // Mapping:
+    // posx -> left
+    // negx -> right
+    // posy -> up
+    // negy -> down
+    // posz -> front
+    // negz -> back
 
     // Code that follows is adapted from "Skybox and environment map in Three.js" by Roman Liutikov
     // http://blog.romanliutikov.com/post/58705840698/skybox-and-environment-map-in-threejs
